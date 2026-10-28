@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KaamSetu — Find Your Next Opportunity</title>
+<meta name="description" content="KaamSetu job portal demo for jobs in India and abroad.">
+<style>
+:root{--navy:#11264b;--blue:#2357d8;--cyan:#eaf3ff;--ink:#17233d;--muted:#64718a;--line:#dce4f0;--bg:#f5f8fc;--green:#16845b}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:11px 15px;font-weight:700}.primary{background:var(--blue);color:white}.secondary{background:#eaf0ff;color:var(--blue)}.outline{background:white;border:1px solid var(--line);color:var(--ink)}.danger{background:#fff0f0;color:#b42318}.topbar{background:var(--navy);color:white;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.brand{font-size:23px;font-weight:900;letter-spacing:-.6px}.brand span{color:#79b7ff}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav button{color:white;background:transparent}.nav button:hover{background:#ffffff20}.wrap{max-width:1150px;margin:auto;padding:24px 18px}.hero{background:linear-gradient(125deg,#11264b,#2357d8);color:white;border-radius:22px;padding:34px;display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:center}.hero h1{font-size:clamp(30px,4vw,46px);line-height:1.08;margin:0 0 14px}.hero p{color:#dce8ff;line-height:1.6}.hero-badge{display:inline-block;border:1px solid #ffffff50;border-radius:30px;padding:7px 12px;font-size:13px;margin-bottom:15px}.searchbox{background:white;color:var(--ink);padding:16px;border-radius:16px;display:grid;grid-template-columns:1.4fr 1fr 1fr auto;gap:8px;margin-top:22px}.field{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:white;min-width:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}.stat,.panel,.job{background:white;border:1px solid var(--line);border-radius:15px;padding:18px}.stat strong{display:block;font-size:24px;color:var(--blue)}.stat span{font-size:13px;color:var(--muted)}.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:26px 0 14px}.section-head h2{margin:0;font-size:23px}.joblist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.job h3{margin:10px 0 5px}.company{font-weight:700}.muted{color:var(--muted);font-size:14px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.tag{background:#eef3fb;border-radius:20px;padding:6px 9px;font-size:12px;color:#3f5272}.jobfoot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:15px}.salary{font-weight:800;color:var(--green)}.layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.formgrid .full{grid-column:1/-1}label{font-size:13px;font-weight:700;display:block;margin-bottom:5px}.formrow{margin-bottom:12px}.hidden{display:none!important}.notice{padding:12px 14px;background:#fff7db;border:1px solid #f1dfa0;border-radius:10px;color:#6f5310;font-size:13px;line-height:1.5}.success{background:#eafaf1;border-color:#b7e5cb;color:#176b45}.modal{position:fixed;inset:0;background:#08152d99;display:flex;align-items:center;justify-content:center;padding:16px;z-index:10}.modalbox{background:white;border-radius:18px;max-width:560px;width:100%;max-height:90vh;overflow:auto;padding:22px}.modalhead{display:flex;justify-content:space-between;align-items:center}.modalhead h2{margin-top:0}.footer{text-align:center;padding:28px;color:var(--muted);font-size:13px}.empty{padding:30px;text-align:center;color:var(--muted);background:white;border:1px dashed var(--line);border-radius:14px}.pill{display:inline-block;background:#eafaf1;color:#16744b;padding:5px 9px;border-radius:30px;font-size:12px;font-weight:700}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:25px}.searchbox{grid-template-columns:1fr 1fr}.searchbox button{grid-column:1/-1}.joblist,.layout{grid-template-columns:1fr}}@media(max-width:480px){.searchbox,.formgrid{grid-template-columns:1fr}.formgrid .full{grid-column:auto}.stats{gap:7px}.stat{padding:12px}.stat strong{font-size:20px}.topbar{padding:13px 4%}.nav button{padding:9px}.wrap{padding:18px 12px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">Kaam<span>Setu</span> <small style="font-size:11px;font-weight:500;color:#dce8ff">JOBS • INDIA & ABROAD</small></div>
+  <nav class="nav">
+    <button onclick="go('home')">Home</button>
+    <button onclick="go('jobs')">Find Jobs</button>
+    <button onclick="openPost()">Post a Job</button>
+    <button onclick="openAccount()">Account</button>
+    <button onclick="go('admin')">Admin Demo</button>
+  </nav>
+</header>
+<main class="wrap">
+<section id="homePage">
+  <div class="hero">
+    <div>
+      <span class="hero-badge">Your career, connected</span>
+      <h1>Find a job that moves you forward.</h1>
+      <p>Explore opportunities across India and abroad — from manufacturing and technician roles to IT, pharma, engineering and more.</p>
+      <button class="primary" onclick="go('jobs')">Explore jobs →</button>
+    </div>
+    <div>
+      <div style="font-size:68px;text-align:center">🌍</div>
+      <div style="text-align:center;color:#dce8ff">One place for candidates and employers</div>
+    </div>
+  </div>
+  <div class="searchbox">
+    <input class="field" id="heroKeyword" placeholder="Job title, skill or company">
+    <select class="field" id="heroCountry"><option value="">India + Abroad</option><option>India</option><option>Abroad</option></select>
+    <select class="field" id="heroType"><option value="">All job types</option><option>Full-time</option><option>Contract</option><option>Apprenticeship</option><option>Internship</option></select>
+    <button class="primary" onclick="searchFromHero()">Search Jobs</button>
+  </div>
+  <div class="stats">
+    <div class="stat"><strong id="statJobs">0</strong><span>Jobs in this demo</span></div>
+    <div class="stat"><strong>India + Global</strong><span>Location coverage</span></div>
+    <div class="stat"><strong>Free demo</strong><span>Try core features locally</span></div>
+  </div>
+  <div class="section-head"><h2>Featured opportunities</h2><button class="secondary" onclick="go('jobs')">View all jobs</button></div>
+  <div id="featuredJobs" class="joblist"></div>
+</section>
+<section id="jobsPage" class="hidden">
+  <div class="section-head"><h2>Find your next job</h2><button class="outline" onclick="clearFilters()">Clear filters</button></div>
+  <div class="panel">
+    <div class="formgrid">
+      <div><label>Keyword</label><input id="filterKeyword" class="field" placeholder="Technician, production, engineer"></div>
+      <div><label>Location</label><input id="filterLocation" class="field" placeholder="India, Germany, Pune..."></div>
+      <div><label>Job category</label><select id="filterCategory" class="field"><option value="">All categories</option><option>Manufacturing</option><option>Electrical</option><option>Technician</option><option>Production</option><option>Pharma</option><option>IT</option><option>Engineering</option><option>Other</option></select></div>
+      <div><label>Work type</label><select id="filterType" class="field"><option value="">All types</option><option>Full-time</option><option>Contract</option><option>Apprenticeship</option><option>Internship</option></select></div>
+    </div>
+    <button class="primary" style="margin-top:12px" onclick="renderJobs()">Search</button>
+  </div>
+  <div class="section-head"><h2 id="jobCountHeading">Available jobs</h2><span class="muted">Demo listings — verify before applying</span></div>
+  <div id="allJobs" class="joblist"></div>
+</section>
+<section id="accountPage" class="hidden">
+  <div class="section-head"><h2>Candidate account</h2></div>
+  <div class="layout">
+    <div class="panel">
+      <h3>Create your candidate profile</h3>
+      <p class="muted">Demo only: profile is stored in this browser.</p>
+      <div class="formrow"><label>Full name</label><input id="candidateName" class="field" placeholder="Your full name"></div>
+      <div class="formrow"><label>Email</label><input id="candidateEmail" type="email" class="field" placeholder="you@example.com"></div>
+      <div class="formrow"><label>Phone</label><input id="candidatePhone" class="field" placeholder="Mobile number"></div>
+      <div class="formrow"><label>Skills / desired role</label><input id="candidateSkills" class="field" placeholder="Electrical, technician, production"></div>
+      <div class="formrow"><label>Resume (PDF/DOC)</label><input id="candidateResume" type="file" class="field" accept=".pdf,.doc,.docx"></div>
+      <button class="primary" onclick="saveCandidate()">Save profile</button>
+      <div id="candidateMsg" style="margin-top:12px"></div>
+    </div>
+    <div class="panel">
+      <h3>Current profile</h3><div id="candidateSummary" class="muted">No profile saved in this browser yet.</div>
+      <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
+      <h3>My applications</h3><div id="myApplications" class="muted">No applications yet.</div>
+    </div>
+  </div>
+</section>
+<section id="adminPage" class="hidden">
+  <div class="section-head"><h2>Admin demo panel</h2><span class="pill">Local demo only</span></div>
+  <div class="notice">This is not a secure admin system. A production portal needs protected admin login, a server, database, spam prevention and moderation tools.</div>
+  <div class="stats">
+    <div class="stat"><strong id="adminJobs">0</strong><span>Total demo jobs</span></div>
+    <div class="stat"><strong id="adminCandidates">0</strong><span>Saved profiles on this device</span></div>
+    <div class="stat"><strong id="adminApps">0</strong><span>Demo applications</span></div>
+  </div>
+  <div class="panel"><div class="section-head"><h2>Manage demo listings</h2><button class="danger" onclick="resetDemo()">Reset demo data</button></div><div id="adminJobList"></div></div>
+</section>
+<div class="footer">© 2026 KaamSetu • Demo prototype • Never pay an employer to secure a job. Verify every offer independently.</div>
+</main>
+
+<div id="modal" class="modal hidden" onclick="if(event.target.id==='modal')closeModal()">
+ <div class="modalbox">
+  <div class="modalhead"><h2 id="modalTitle">Post a job</h2><button class="outline" onclick="closeModal()">✕</button></div>
+  <div id="modalBody"></div>
+ </div>
+</div>
+<script>
+const seedJobs=[
+{id:1,title:"Process Technician",company:"Sample Semiconductor Company",location:"India • Gujarat",country:"India",category:"Technician",type:"Full-time",salary:"₹2.5–4.5 LPA",description:"Support production processes, follow SOPs, document output and assist with troubleshooting.",verified:false},
+{id:2,title:"Electrical Maintenance Technician",company:"Sample Manufacturing Ltd.",location:"Pune, Maharashtra, India",country:"India",category:"Electrical",type:"Full-time",salary:"₹2–4 LPA",description:"Preventive maintenance, panel checks, troubleshooting and safe electrical work.",verified:false},
+{id:3,title:"Production Operator",company:"Sample Pharma Plant",location:"Hyderabad, India",country:"India",category:"Pharma",type:"Full-time",salary:"₹1.8–3 LPA",description:"Follow manufacturing instructions, safety procedures and quality documentation.",verified:false},
+{id:4,title:"Electronics Assembly Technician",company:"Sample Electronics Employer",location:"Germany",country:"Abroad",category:"Manufacturing",type:"Full-time",salary:"Salary not specified",description:"Assembly and inspection of electronic components. Language and visa requirements must be checked.",verified:false},
+{id:5,title:"Electrical Apprentice",company:"Sample Industrial Services",location:"Nashik, Maharashtra, India",country:"India",category:"Electrical",type:"Apprenticeship",salary:"As per company policy",description:"Entry-level industrial electrical training with supervision and safety procedures.",verified:false},
+{id:6,title:"Junior Production Associate",company:"Sample Engineering Works",location:"United Arab Emirates",country:"Abroad",category:"Production",type:"Contract",salary:"Salary not specified",description:"Assist with production operations. Verify employer, contract, work permit and all fees before travel.",verified:false}
+];
+const store={jobs:"ks_jobs_v1",candidate:"ks_candidate_v1",apps:"ks_apps_v1",candidates:"ks_candidates_v1"};
+function read(k, fallback){try{const v=localStorage.getItem(k);return v?JSON.parse(v):fallback}catch(e){return fallback}}
+function write(k,v){localStorage.setItem(k,JSON.stringify(v))}
+function jobs(){let j=read(store.jobs,null);if(!j){j=seedJobs;write(store.jobs,j)}return j}
+function apps(){return read(store.apps,[])}
+function go(page){["home","jobs","account","admin"].forEach(p=>document.getElementById(p+"Page").classList.toggle("hidden",p!==page));if(page==="jobs")renderJobs();if(page==="account")renderAccount();if(page==="admin")renderAdmin();if(page==="home")renderHome();window.scrollTo({top:0,behavior:"smooth"})}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function card(j){return `<article class="job"><span class="pill">${esc(j.country||"Location varies")}</span><h3>${esc(j.title)}</h3><div class="company">${esc(j.company)}</div><div class="muted">📍 ${esc(j.location)} · ${esc(j.type)}</div><div class="tags"><span class="tag">${esc(j.category)}</span><span class="tag">${esc(j.type)}</span></div><p class="muted">${esc(j.description)}</p><div class="jobfoot"><span class="salary">${esc(j.salary||"Salary not specified")}</span><button class="primary" onclick="applyJob(${Number(j.id)})">Apply</button></div></article>`}
+function renderHome(){let j=jobs();document.getElementById("statJobs").textContent=j.length;document.getElementById("featuredJobs").innerHTML=j.slice(0,4).map(card).join("")||'<div class="empty">No jobs yet.</div>'}
+function renderJobs(){let k=(document.getElementById("filterKeyword")?.value||"").toLowerCase().trim(),l=(document.getElementById("filterLocation")?.value||"").toLowerCase().trim(),c=document.getElementById("filterCategory")?.value||"",t=document.getElementById("filterType")?.value||"";let filtered=jobs().filter(j=>(!k||[j.title,j.company,j.category,j.description].join(" ").toLowerCase().includes(k))&&(!l||j.location.toLowerCase().includes(l)||j.country.toLowerCase().includes(l))&&(!c||j.category===c)&&(!t||j.type===t));document.getElementById("jobCountHeading").textContent=`${filtered.length} job${filtered.length===1?"":"s"} found`;document.getElementById("allJobs").innerHTML=filtered.map(card).join("")||'<div class="empty">No jobs match these filters. Try a broader search.</div>'}
+function searchFromHero(){document.getElementById("filterKeyword").value=document.getElementById("heroKeyword").value;document.getElementById("filterLocation").value=document.getElementById("heroCountry").value==="Abroad"?"Abroad":document.getElementById("heroCountry").value==="India"?"India":"";document.getElementById("filterType").value=document.getElementById("heroType").value;go("jobs")}
+function clearFilters(){["filterKeyword","filterLocation","filterCategory","filterType"].forEach(id=>document.getElementById(id).value="");renderJobs()}
+function openModal(title,body){document.getElementById("modalTitle").textContent=title;document.getElementById("modalBody").innerHTML=body;document.getElementById("modal").classList.remove("hidden")}
+function closeModal(){document.getElementById("modal").classList.add("hidden")}
+function openPost(){openModal("Post a job",`<div class="notice">Demo listing only. Job posts are saved in this browser; they are not published to the internet or visible to other users.</div><div style="margin-top:14px"><div class="formrow"><label>Job title *</label><input id="pTitle" class="field" placeholder="e.g. Electrical Technician"></div><div class="formrow"><label>Company name *</label><input id="pCompany" class="field" placeholder="Company name"></div><div class="formgrid"><div><label>Location *</label><input id="pLocation" class="field" placeholder="City, country"></div><div><label>Country scope</label><select id="pCountry" class="field"><option>India</option><option>Abroad</option></select></div><div><label>Category</label><select id="pCategory" class="field"><option>Manufacturing</option><option>Electrical</option><option>Technician</option><option>Production</option><option>Pharma</option><option>IT</option><option>Engineering</option><option>Other</option></select></div><div><label>Work type</label><select id="pType" class="field"><option>Full-time</option><option>Contract</option><option>Apprenticeship</option><option>Internship</option></select></div></div><div class="formrow"><label>Salary / pay range</label><input id="pSalary" class="field" placeholder="e.g. ₹3–5 LPA"></div><div class="formrow"><label>Job description *</label><textarea id="pDesc" class="field" rows="4" placeholder="Responsibilities, qualifications, work conditions"></textarea></div><button class="primary" onclick="saveJob()">Save demo job</button></div>`)}
+function saveJob(){let title=document.getElementById("pTitle").value.trim(),company=document.getElementById("pCompany").value.trim(),location=document.getElementById("pLocation").value.trim(),description=document.getElementById("pDesc").value.trim();if(!title||!company||!location||!description){alert("Please fill in title, company, location and description.");return}let j=jobs();j.unshift({id:Date.now(),title,company,location,country:document.getElementById("pCountry").value,category:document.getElementById("pCategory").value,type:document.getElementById("pType").value,salary:document.getElementById("pSalary").value.trim()||"Salary not specified",description,verified:false});write(store.jobs,j);closeModal();renderHome();alert("Demo job saved in this browser.");go("jobs")}
+function openAccount(){go("account")}
+function saveCandidate(){let name=document.getElementById("candidateName").value.trim(),email=document.getElementById("candidateEmail").value.trim(),phone=document.getElementById("candidatePhone").value.trim(),skills=document.getElementById("candidateSkills").value.trim(),file=document.getElementById("candidateResume").files[0];if(!name||!email){alert("Please enter your name and email.");return}let profile={name,email,phone,skills,resumeName:file?file.name:"Not uploaded",savedAt:new Date().toISOString()};write(store.candidate,profile);let all=read(store.candidates,[]);if(!all.some(x=>x.email.toLowerCase()===email.toLowerCase()))all.push({name,email,phone,skills});write(store.candidates,all);document.getElementById("candidateMsg").innerHTML='<div class="notice success">Profile saved on this device. Resume file itself is not uploaded to a server.</div>';renderAccount()}
+function renderAccount(){let c=read(store.candidate,null);document.getElementById("candidateSummary").innerHTML=c?`<p><b>${esc(c.name)}</b></p><p>${esc(c.email)}</p><p>${esc(c.phone||"No phone added")}</p><p>Skills: ${esc(c.skills||"Not specified")}</p><p>Resume selected: ${esc(c.resumeName)}</p>`:"No profile saved in this browser yet.";let a=apps();document.getElementById("myApplications").innerHTML=a.length?a.map(x=>`<div style="padding:9px 0;border-bottom:1px solid var(--line)"><b>${esc(x.title)}</b><div class="muted">${esc(x.company)} · ${esc(x.date)}</div></div>`).join(""):"No applications yet."}
+function applyJob(id){let c=read(store.candidate,null);if(!c){if(confirm("Create a candidate profile before applying?"))go("account");return}let j=jobs().find(x=>x.id===id);if(!j)return;let a=apps();if(a.some(x=>x.id===id&&x.email===c.email)){alert("You have already applied to this demo job.");return}a.push({id,title:j.title,company:j.company,email:c.email,date:new Date().toLocaleDateString()});write(store.apps,a);alert("Demo application saved. It has not been sent to the employer.");renderAccount()}
+function renderAdmin(){let j=jobs(),c=read(store.candidates,[]),a=apps();document.getElementById("adminJobs").textContent=j.length;document.getElementById("adminCandidates").textContent=c.length;document.getElementById("adminApps").textContent=a.length;document.getElementById("adminJobList").innerHTML=j.map(x=>`<div style="display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)"><div><b>${esc(x.title)}</b><div class="muted">${esc(x.company)} · ${esc(x.location)}</div></div><button class="danger" onclick="deleteJob(${Number(x.id)})">Delete</button></div>`).join("")||'<div class="empty">No jobs posted.</div>'}
+function deleteJob(id){if(!confirm("Delete this demo listing?"))return;write(store.jobs,jobs().filter(x=>x.id!==id));renderAdmin();renderHome()}
+function resetDemo(){if(!confirm("Reset jobs, candidate profile and demo applications on this browser?"))return;Object.values(store).forEach(k=>localStorage.removeItem(k));renderAdmin();renderHome();alert("Demo data reset.")}
+renderHome();
+</script>
+</body>
+</html>
