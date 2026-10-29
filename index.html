@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#11264b">
 <title>KaamSetu — Find Your Next Opportunity</title>
 <meta name="description" content="KaamSetu job portal demo for jobs in India and abroad.">
 <style>
@@ -138,5 +140,6 @@ function deleteJob(id){if(!confirm("Delete this demo listing?"))return;write(sto
 function resetDemo(){if(!confirm("Reset jobs, candidate profile and demo applications on this browser?"))return;Object.values(store).forEach(k=>localStorage.removeItem(k));renderAdmin();renderHome();alert("Demo data reset.")}
 renderHome();
 </script>
+<script>if ("serviceWorker" in navigator && location.protocol.startsWith("http")) { window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {})); }</script>
 </body>
 </html>

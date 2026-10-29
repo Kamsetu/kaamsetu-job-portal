@@ -1,0 +1,10 @@
+{
+  "name": "KaamSetu Job Portal",
+  "short_name": "KaamSetu",
+  "description": "Find jobs in India and abroad",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f8fc",
+  "theme_color": "#11264b",
+  "icons": []
+}
